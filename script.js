@@ -4,22 +4,41 @@ $(document).ready(function () {
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
         
-        console.log(locationOne );
-        console.log(locationTwo );
-        var queryUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=" + locationOne + "&destination=" + locationTwo + "&key=AIzaSyDefHkn2_1LDLBHbKVXW96lTDBJZwzeQp8";
-        $.ajax({ 
-            url: queryUrl,
-            
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-        console.log(response.routes[0].legs[0].distance.text);
-        var distance = response.routes[0].legs[0].distance.text;
-        $("#distance").html("Your distance is " + distance);
-        // consol
-        
-        
+        var requestOne = $.ajax({ 
+            url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
+            method: "GET",
+            headers: {
+                'x-rapidapi-key': '2c0c4fc78amsh2da7164325059e7p108519jsn0d3ac9dc0c8c',
+                'x-rapidapi-host': 'google-maps-geocoding.p.rapidapi.com'
+            }
         });
+
+        var requestTwo = $.ajax({ 
+            url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationTwo,
+            method: "GET",
+            headers: {
+                'x-rapidapi-key': '2c0c4fc78amsh2da7164325059e7p108519jsn0d3ac9dc0c8c',
+                'x-rapidapi-host': 'google-maps-geocoding.p.rapidapi.com'
+            }
+        });
+
+        $.when(requestOne, requestTwo).done(function(responseOne, responseTwo) {
+            console.log(responseOne);
+            console.log(responseTwo);
+            var latLocationOne = responseOne[0].results[0].geometry.location.lat;
+            var lngLocationOne = responseOne[0].results[0].geometry.location.lng;
+            $("#locationOneLatLng").html("First location latitude is " + latLocationOne + " and Longitute is " + lngLocationOne);
+
+            var latLocationTwo = responseTwo[0].results[0].geometry.location.lat;
+            var lngLocationTwo = responseTwo[0].results[0].geometry.location.lng;
+            $("#locationTwoLatLng").html("Second location latitude is " + latLocationTwo + " and Longitute is " + lngLocationTwo);
+
+            var finalLat = (latLocationOne + latLocationTwo) / 2;
+            var finalLng = (lngLocationOne + lngLocationTwo) / 2;
+            $("#finalLatLng").html("Final latitude is " + finalLat + " and Longitute is " + finalLng);
+
+
+          });
 
     });
 
