@@ -1,17 +1,11 @@
+body {
+    background-color: rgb(233, 185, 123);
+}
+
 .navbar {
   background-color: olive;
   text-align: center;
 }
-/* .column {
-  float: left;
-  width: 50%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
 .row {
-    text-align: center;
+    padding-left: 30px;
 }
