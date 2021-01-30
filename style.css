@@ -1,4 +1,17 @@
-body {
-    background-color: olive;
+.navbar {
+  background-color: olive;
+  text-align: center;
+}
+/* .column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+.row {
     text-align: center;
 }
