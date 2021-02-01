@@ -2,3 +2,6 @@ body {
     background-color: olive;
     text-align: center;
 }
+#checkbox{
+    float:left;
+}

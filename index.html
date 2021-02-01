@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="">
-            <img src="feedme2.png" alt="Logo for Feed Me" width="140" height="140">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      </nav>
+            <a class="navbar-item" href="">
+                <img src="feedme2.png" alt="Logo for Feed Me" width="140" height="140">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+
+            <div>
+                <label for="firstLocation">First Location:</label><br>
+                <input type="text" id="firstLocation" name="firstLocation" value=""><br>
+                <label for="secondLocation">Second Location:</label><br>
+                <input type="text" id="secondLocation" name="secondLocation" value=""><br><br>
+                <input type="button" id="submitButton" value="Submit">
+            </div>
+            <br>
+            <h1 id="distance"></h1>
+
+            <h1 id="locationOneLatLng"></h1>
+            <h1 id="locationTwoLatLng"></h1>
+            <h1 id="finalLatLng"></h1>
+            <div id="address"></div>
+            <section id="checkbox">
+                <div>
+                    <input type="checkbox" id="indian" name="indian" data-cuisine-id="148">
+                    <label for="indian">Indian</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="japanese" name="japanese" data-cuisine-id="60">
+                    <label for="japanese">Japanese</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="italian" name="italian" data-cuisine-id="55">
+                    <label for="italian">Italian</label>
+                </div>
+            </section>
+            <script src="script.js"></script>
 </body>
+
 </html>
