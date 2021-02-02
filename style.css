@@ -1,7 +1,37 @@
 body {
-    background-color: olive;
-    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/f3/91/70/f391700546ec75d022f4040a68e4a4dc.png");
 }
-#checkbox{
-    float:left;
+
+.navbar {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5cffdfdd7a7d7700013ba738/1562861377034-WFXN6C7546JUSJ7PBMQR/ke17ZwdGBToddI8pDm48kBXVb89E-7fAphVGzelGgOMUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dlIVHh8Elr_mWGdfie0kMrSa3Ie-hGgtYTOTq9tbKiA8G6v6ULRah83RgHXAWD5lbQ/wood-BG-3.jpg?format=2500w");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.uk-card {
+    border: solid black 2px;
+    padding: 10px;
+    background-color: rgba(167, 167, 88, 0.589);
+    color: black;
+}
+
+
+.row {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.row2 {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer {
+    font-size: 30px;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5cffdfdd7a7d7700013ba738/1562861377034-WFXN6C7546JUSJ7PBMQR/ke17ZwdGBToddI8pDm48kBXVb89E-7fAphVGzelGgOMUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dlIVHh8Elr_mWGdfie0kMrSa3Ie-hGgtYTOTq9tbKiA8G6v6ULRah83RgHXAWD5lbQ/wood-BG-3.jpg?format=2500w");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    text-align: center;
+    padding: 12px;
+    color: black;
 }
