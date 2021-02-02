@@ -3,8 +3,8 @@ $(document).ready(function () {
     $("#submitButton").click(function () {
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
-        
-        var requestOne = $.ajax({ 
+
+        var requestOne = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
             method: "GET",
             headers: {
@@ -13,7 +13,7 @@ $(document).ready(function () {
             }
         });
 
-        var requestTwo = $.ajax({ 
+        var requestTwo = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationTwo,
             method: "GET",
             headers: {
@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
         });
 
-        $.when(requestOne, requestTwo).done(function(responseOne, responseTwo) {
+        $.when(requestOne, requestTwo).done(function (responseOne, responseTwo) {
             console.log(responseOne);
             console.log(responseTwo);
             var latLocationOne = responseOne[0].results[0].geometry.location.lat;
@@ -38,8 +38,28 @@ $(document).ready(function () {
             $("#finalLatLng").html("Final latitude is " + finalLat + " and Longitute is " + finalLng);
 
 
-          });
+        });
 
     });
 
+    // function is on click, how will we need to call my "getResturant function"?
+    // api key "bb0c5902e0d27b1c6e6843ed70127291"
+    function getResturant() {
+        $.ajax({
+            method: "GET",
+            crossDomain: true,
+            url: "https://developers.zomato.com/api/v2.1/categories",
+            dataType: "json",
+            async: true,
+            headers: {
+                "user-key": "bb0c5902e0d27b1c6e6843ed70127291"
+            }
+        }).then(function (response) {
+            console.log(response);
+
+        })
+
+    }
+
+    getResturant();
 });
