@@ -1,23 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>Feed Me</title>
 </head>
+
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="">
-            <img src="feedme2.png" alt="Logo for Feed Me" width="140" height="140">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.livephish.com">
+        <img src="feedme2.png" alt="Logo for Feed Me" text-align="center" width="200" height="200">
+      </a>
+  </nav>
+  <div class="row">
+    <div class="card1 uk-card uk-card-default col-lg-6">
+      <div class="cuisine">
+        <h3>What is your favorite type of cuisine?</h3>
+        <input type="checkbox" id="indian" value="Indian">Indian<br>
+        <input type="checkbox" id="japanese" value="Japanese">Japanese<br>
+        <input type="checkbox" id="italian" value="Italian">Italian<br>
+        <br>
+        <input type="submit" id="cuisine-btn"value="That's right" />
+      </div>
+    </div>
+    <div class="card2 uk-card uk-card-default col-lg-6">
+      <div class="requirements">
+        <h3>What do you require your restaurant to have?</h3>
+        <input type="checkbox" id="patio" value="Patio">Patio Seating<br>
+        <input type="checkbox" id="kids" value="Kids">Kid Friendly<br>
+        <input type="checkbox" id="veg" value="Vegetarian">Vegetarian Options<br>
+        <input type="checkbox" id="music" value="Music">Live Music<br>
+        <input type="checkbox" id="alcohol" value="Alcohol">Serves Alcohol<br>
+        <input type="submit" id="req-btn"value="You've got it" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="loc-card uk-card uk-card-default col-lg-6">
+      <div class="current-location">
+        <h3>Whats your current location?</h3>
+        <p>1st location</p>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-width-medium" type="text">
         </div>
-      </nav>
+        <br>
+        <p>2nd location</p>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-width-medium" type="text">
+        </div>
+        <input type="submit" id="loc-btn" value="Find your spot!" />
+      </div>
+    </div>
+    <div class="sel-loc-card uk-card uk-card-default col-lg-6">
+      <div class="dining-spot">
+        <h3>Here's your selected restaurant!</h3>
+        <div class="uk-margin">
+          <input class="uk-input uk-form-width-medium" type="text">
+        </div>
+        <input type="submit" value="Submit now" />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><a href="" uk-icon="heart"></a></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
