@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>Feed Me</title>
 </head>
@@ -20,9 +21,9 @@
     <div class="card1 uk-card uk-card-default col-lg-6">
       <div class="cuisine">
         <h3>What is your favorite type of cuisine?</h3>
-        <input type="checkbox" id="indian" value="Indian">Indian<br>
-        <input type="checkbox" id="japanese" value="Japanese">Japanese<br>
-        <input type="checkbox" id="italian" value="Italian">Italian<br>
+        <input type="checkbox" id="indian" value="Indian" data-cuisine-id="148">Indian<br>
+        <input type="checkbox" id="japanese" value="Japanese" data-cuisine-id="60">Japanese<br>
+        <input type="checkbox" id="italian" value="Italian" data-cuisine-id="55"">Italian<br>
         <br>
         <input type="submit" id="cuisine-btn"value="That's right" />
       </div>
