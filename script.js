@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    $("#submitButton").click(function () {
+    $("#loc-btn").click(function () {
+        console.log("Hello")
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
 
@@ -37,16 +38,16 @@ $(document).ready(function () {
             var finalLng = (lngLocationOne + lngLocationTwo) / 2;
 
             var cuisines = [];
-            if ($('input[name="indian"]').is(':checked')) {
+            if ($('input[id="indian"]').is(':checked')) {
                 var indianId = $("#indian").attr("data-cuisine-id");
                 cuisines.push(indianId);
             }
-            if ($('input[name="japanese"]').is(':checked')) {
-                
+            if ($('input[id="japanese"]').is(':checked')) {
+
                 cuisines.push($("#japanese").attr("data-cuisine-id"));
             }
-            if ($('input[name="italian"]').is(':checked')) {
-                
+            if ($('input[id="italian"]').is(':checked')) {
+
                 cuisines.push($("#italian").attr("data-cuisine-id"));
             }
 
@@ -77,22 +78,37 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
-            for (var i = 0; i < response.restaurants.length; i++) {
-                // newHTML.push('<span>' + array[i] + '</span>');
-                console.log(i);
-                var newh1 = $("<h1>");
-                var resturantName = response.restaurants[i].restaurant.name;
-                var resturantAddress = response.restaurants[i].restaurant.location.address;
-                var cuisines = response.restaurants[i].restaurant.cuisines;
-                newh1.html("Resturant: " + resturantName + "\n <br>" + "Address:  " + resturantAddress + "\n <br>" + "Cuisines:  " + cuisines);
-                $("#address").append(newh1);
+            // pick a random number
+            var num = Math.floor(Math.random() * 16);
+            console.log(num);
 
-            }
+            $("#response").empty();
+
+            // for (var i = 0; i < response.restaurants.length; i++) {
+            //     // newHTML.push('<span>' + array[i] + '</span>');
+            //     console.log(i);
+            //     var newh1 = $("<h1>");
+            var resturantName = response.restaurants[num].restaurant.name;
+            var resturantAddress = response.restaurants[num].restaurant.location.address;
+            var cuisines = response.restaurants[num].restaurant.cuisines;
+            //     newh1.html("Resturant: " + resturantName + "\n <br>" + "Address:  " + resturantAddress + "\n <br>" + "Cuisines:  " + cuisines);
+            //     $("#address").append(newh1);
+            console.log(resturantName);
+            console.log(resturantAddress);
+            console.log(cuisines);
+
+            $("#response").append(resturantName, resturantAddress)
+
+
+            // }
 
 
         })
 
     }
+
+
+
 
 
 });

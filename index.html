@@ -25,7 +25,7 @@
         <input type="checkbox" id="japanese" value="Japanese" data-cuisine-id="60">Japanese<br>
         <input type="checkbox" id="italian" value="Italian" data-cuisine-id="55"">Italian<br>
         <br>
-        <input type="submit" id="cuisine-btn"value="That's right" />
+        <input type=" submit" id="cuisine-btn" value="That's right" />
       </div>
     </div>
     <div class="card2 uk-card uk-card-default col-lg-6">
@@ -36,7 +36,7 @@
         <input type="checkbox" id="veg" value="Vegetarian">Vegetarian Options<br>
         <input type="checkbox" id="music" value="Music">Live Music<br>
         <input type="checkbox" id="alcohol" value="Alcohol">Serves Alcohol<br>
-        <input type="submit" id="req-btn"value="You've got it" />
+        <input type="submit" id="req-btn" value="You've got it" />
       </div>
     </div>
   </div>
@@ -47,12 +47,12 @@
         <h3>Whats your current location?</h3>
         <p>1st location</p>
         <div class="uk-margin">
-          <input class="uk-input uk-form-width-medium" type="text">
+          <input class="uk-input uk-form-width-medium" type="text" id="firstLocation">
         </div>
         <br>
         <p>2nd location</p>
         <div class="uk-margin">
-          <input class="uk-input uk-form-width-medium" type="text">
+          <input class="uk-input uk-form-width-medium" type="text" id="secondLocation">
         </div>
         <input type="submit" id="loc-btn" value="Find your spot!" />
       </div>
@@ -61,7 +61,8 @@
       <div class="dining-spot">
         <h3>Here's your selected restaurant!</h3>
         <div class="uk-margin">
-          <input class="uk-input uk-form-width-medium" type="text">
+          <div id="response"></div>
+          <!-- class="uk-input uk-form-width-medium" type="text" -->
         </div>
         <input type="submit" value="Submit now" />
       </div>
