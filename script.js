@@ -5,6 +5,13 @@ $(document).ready(function () {
         // setting variables to get values from the user input
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
+        console.log(locationOne);
+        console.log(locationTwo);
+        // if statement in case people don't want to enter a second address
+        if (locationTwo === "") {
+            locationTwo = locationOne
+        }
+        console.log(locationTwo)
         // ajax call for the first location
         var requestOne = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
@@ -36,6 +43,7 @@ $(document).ready(function () {
             var lngLocationTwo = responseTwo[0].results[0].geometry.location.lng;
             // $("#locationTwoLatLng").html("Second location latitude is " + latLocationTwo + " and Longitute is " + lngLocationTwo);
             // math to find the distance between these two locations and search for resturants between them
+            // if one address, double the first lat and long, if two addresses, do the thing written here. 
             var finalLat = (latLocationOne + latLocationTwo) / 2;
             var finalLng = (lngLocationOne + lngLocationTwo) / 2;
             // variable for cuisines picked by user, they can pick one or all of them, these numbers will be used for the zomato api call
