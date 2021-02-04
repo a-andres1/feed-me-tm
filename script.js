@@ -7,9 +7,16 @@ $(document).ready(function () {
         var locationTwo = $("#secondLocation").val().trim();
         console.log(locationOne);
         console.log(locationTwo);
-        // if statement in case people don't want to enter a second address
+        // if statements in case people don't enter addresses correctly
         if (locationTwo === "") {
             locationTwo = locationOne
+        }
+        if (locationOne === ""){
+            locationOne = locationTwo
+        }
+        if (locationOne === "", locationTwo === ""){
+            var text = $("<p>").text("Please enter an address")
+            $("#location").append(text);
         }
         console.log(locationTwo)
         // ajax call for the first location
@@ -71,7 +78,7 @@ $(document).ready(function () {
     });
 
 
-    // function to run the zomator api call
+    // function to run the zomato api call
     function getResturant(finalLat, finalLng, cuisines) {
         console.log(finalLat);
         console.log(finalLng);
@@ -79,7 +86,7 @@ $(document).ready(function () {
         $.ajax({
             method: "GET",
             crossDomain: true,
-            url: "https://developers.zomato.com/api/v2.1/search?radius=2000&lat=" + finalLat + "&lon=" + finalLng + "&count=15&cuisines=" + cuisines,
+            url: "https://developers.zomato.com/api/v2.1/search?radius=1000&lat=" + finalLat + "&lon=" + finalLng + "&count=15&cuisines=" + cuisines,
             dataType: "json",
             async: true,
             headers: {
