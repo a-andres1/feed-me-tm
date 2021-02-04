@@ -1,10 +1,20 @@
 $(document).ready(function () {
+
+    // Load values from local storage on page load.
+    $("#firstLocation").val(localStorage.getItem("locationOne"));
+    $("#secondLocation").val(localStorage.getItem("locationTwo"));
+
+    $("#indian").prop("checked", localStorage.getItem("indian") == "true");
+    $("#japanese").prop("checked", localStorage.getItem("japanese") == "true");
+    $('input[id="italian"]').prop("checked", localStorage.getItem("italian") == "true");
+
     // Function to get latitude and longitude
     $("#loc-btn").click(function () {
         console.log("Hello")
         // setting variables to get values from the user input
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
+        
         console.log(locationOne);
         console.log(locationTwo);
         // if statements in case people don't enter addresses correctly
@@ -19,6 +29,17 @@ $(document).ready(function () {
             $("#location").append(text);
         }
         console.log(locationTwo)
+
+        localStorage.setItem("locationOne", locationOne);
+        localStorage.setItem("locationTwo", locationTwo);
+        
+        var isIndianChecked = $("#indian").is(":checked");
+        var isJapaneseChecked = $("#japanese").is(":checked");
+        var isItalianChecked = $("#italian").is(":checked");
+        localStorage.setItem("indian", isIndianChecked);
+        localStorage.setItem("japanese", isJapaneseChecked);
+        localStorage.setItem("italian", isItalianChecked);
+
         // ajax call for the first location
         var requestOne = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
@@ -44,11 +65,9 @@ $(document).ready(function () {
             // setting variables for the lat and long for the first location returned from the api call
             var latLocationOne = responseOne[0].results[0].geometry.location.lat;
             var lngLocationOne = responseOne[0].results[0].geometry.location.lng;
-            // $("#locationOneLatLng").html("First location latitude is " + latLocationOne + " and Longitute is " + lngLocationOne);
-            // setting variables fro the lat and long for the second location 
+            // setting variables for the lat and long for the second location 
             var latLocationTwo = responseTwo[0].results[0].geometry.location.lat;
             var lngLocationTwo = responseTwo[0].results[0].geometry.location.lng;
-            // $("#locationTwoLatLng").html("Second location latitude is " + latLocationTwo + " and Longitute is " + lngLocationTwo);
             // math to find the distance between these two locations and search for resturants between them
             // if one address, double the first lat and long, if two addresses, do the thing written here. 
             var finalLat = (latLocationOne + latLocationTwo) / 2;
@@ -96,7 +115,7 @@ $(document).ready(function () {
             console.log(response);
 
             // pick a random number
-            var num = Math.floor(Math.random() * 16);
+            var num = Math.floor(Math.random() * response.restaurants.length);
             console.log(num);
             // clears the response so that the restuarants don't append to each other
             $("#response").empty();
