@@ -11,28 +11,37 @@ $(document).ready(function () {
     // Function to get latitude and longitude
     $("#loc-btn").click(function () {
         console.log("Hello")
+        $("#location").empty();
         // setting variables to get values from the user input
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
-        
+
         console.log(locationOne);
         console.log(locationTwo);
         // if statements in case people don't enter addresses correctly
-        if (locationTwo === "") {
-            locationTwo = locationOne
-        }
-        if (locationOne === ""){
-            locationOne = locationTwo
-        }
-        if (locationOne === "", locationTwo === ""){
+        if (locationOne === "" && locationTwo === "") {
             var text = $("<p>").text("Please enter an address")
             $("#location").append(text);
+            
+        }
+       else if (locationOne === "") {
+            locationOne = locationTwo
+            getTudes(locationOne, locationTwo);
+        }
+       else if (locationTwo === "") {
+        locationTwo = locationOne
+        getTudes(locationOne, locationTwo);
+            
+        }
+        else {
+            getTudes(locationOne, locationTwo);
+
         }
         console.log(locationTwo)
 
         localStorage.setItem("locationOne", locationOne);
         localStorage.setItem("locationTwo", locationTwo);
-        
+
         var isIndianChecked = $("#indian").is(":checked");
         var isJapaneseChecked = $("#japanese").is(":checked");
         var isItalianChecked = $("#italian").is(":checked");
@@ -40,7 +49,9 @@ $(document).ready(function () {
         localStorage.setItem("japanese", isJapaneseChecked);
         localStorage.setItem("italian", isItalianChecked);
 
-        // ajax call for the first location
+    });
+
+    function getTudes(locationOne, locationTwo) {   // ajax call for the first location
         var requestOne = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
             method: "GET",
@@ -93,8 +104,8 @@ $(document).ready(function () {
             // $("#finalLatLng").html("Final latitude is " + finalLat + " and Longitute is " + finalLng);
             getResturant(finalLat, finalLng, cuisines);
         });
+    }
 
-    });
 
 
     // function to run the zomato api call
