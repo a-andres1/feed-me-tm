@@ -7,6 +7,8 @@ $(document).ready(function () {
     $("#indian").prop("checked", localStorage.getItem("indian") == "true");
     $("#japanese").prop("checked", localStorage.getItem("japanese") == "true");
     $('input[id="italian"]').prop("checked", localStorage.getItem("italian") == "true");
+    $('input[id="pizza"]').prop("checked", localStorage.getItem("pizza") == "true");
+    $('input[id="bbq"]').prop("checked", localStorage.getItem("bbq") == "true");
 
     // Function to get latitude and longitude
     $("#loc-btn").click(function () {
@@ -45,9 +47,14 @@ $(document).ready(function () {
         var isIndianChecked = $("#indian").is(":checked");
         var isJapaneseChecked = $("#japanese").is(":checked");
         var isItalianChecked = $("#italian").is(":checked");
+        var isPizzaChecked = $("#pizza").is(":checked");
+        var isBbqChecked = $("#bbq").is(":checked");
         localStorage.setItem("indian", isIndianChecked);
         localStorage.setItem("japanese", isJapaneseChecked);
         localStorage.setItem("italian", isItalianChecked);
+        localStorage.setItem("pizza", isPizzaChecked);
+        localStorage.setItem("bbq", isBbqChecked);
+
 
     });
 
@@ -97,7 +104,14 @@ $(document).ready(function () {
 
                 cuisines.push($("#italian").attr("data-cuisine-id"));
             }
+            if ($('input[id="pizza"]').is(':checked')) {
 
+                cuisines.push($("#italian").attr("data-cuisine-id"));
+            }
+            if ($('input[id="bbq"]').is(':checked')) {
+
+                cuisines.push($("#bbq").attr("data-cuisine-id"));
+            }
             console.log(cuisines);
 
             // passing the parameters to the function for the zomato api call
