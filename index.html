@@ -19,10 +19,15 @@
         <img src="feedme2.png" alt="Logo for Feed Me" text-align="center" width="200" height="200">
       </a>
   </nav>
-  <div class="row">
+
+
+
+
+
+  <div class="row2">
     <div class="card1 uk-card uk-card-default col-lg-6">
       <div class="cuisine">
-        <h3>What is your favorite type of cuisine?</h3>
+        <h3>What's your favorite type of cuisine?</h3>
         <input type="checkbox" id="indian" value="Indian" data-cuisine-id="148">Indian<br>
         <input type="checkbox" id="japanese" value="Japanese" data-cuisine-id="60">Japanese<br>
         <input type="checkbox" id="italian" value="Italian" data-cuisine-id="55">Italian<br>
@@ -32,50 +37,9 @@
         <input type="submit" id="cuisine-btn" value="That's right" />
       </div>
     </div>
-    <div class="card2 uk-card uk-card-default col-lg-6">
-      <h3 id="gallery">A gallery of your favorite cuisines!</h3>
-      <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
-
-        <ul class="uk-slideshow-items">
-          <li>
-            <img
-              src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/09/spaghetti-meatballs.jpg?fit=1200%2C879&ssl=1"
-              alt="Italian Cuisine" uk-cover>
-          </li>
-          <li>
-            <img
-              src="https://media3.s-nbcnews.com/j/newscms/2019_39/3027176/190926-chicken-tikka-masala-se-405p_663a402a82bc1464dfc1838472644431.fit-760w.jpg"
-              alt="Indian Cuisine" uk-cover>
-          </li>
-          <li>
-            <img
-              src="https://www.thecookierookie.com/wp-content/uploads/2018/12/crock-pot-ribs-recipe-slow-cooker-bbq-ribs-3-of-7.jpg"
-              alt="BBQ Cuisine" uk-cover>
-          </li>
-          <li>
-            <img
-              src="https://thumbs.dreamstime.com/b/japanese-hibachi-lunch-made-fried-rice-shrimp-steak-vegetables-close-up-table-vertical-top-view-plate-172491252.jpg"
-              alt="Japanese Cuisine" uk-cover>
-          </li>
-          <li>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhugPRw08Hpk9yt_fA5fg0PIQ-OLybjsOwA&usqp=CAU"
-              alt="Pizza Cuisine" uk-cover>
-          </li>
-        </ul>
-
-        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-          uk-slideshow-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-          uk-slideshow-item="next"></a>
-
-      </div>
-  </div>
-
-  <div class="row2">
     <div class="loc-card uk-card uk-card-default col-lg-6">
       <div class="current-location">
-        <h3 id="location">Whats your current location?</h3>
+        <h3 id="location">What's your current location?</h3>
         <p>1st location</p>
         <div class="uk-margin">
           <input class="uk-input uk-form-width-medium" type="text" id="firstLocation">
@@ -102,8 +66,59 @@
 
 
 
+  <div class="row">
+
+    <div class="card2 uk-card uk-card-default col-lg-6">
+      <h3 id="gallery">A photo gallery of your favorite cuisines!</h3>
+      <div>
+
+        <div class="uk-h3"></div>
+
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: fade">
+
+          <ul class="uk-slideshow-items gallery">
+            <li>
+              <img
+                src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/09/spaghetti-meatballs.jpg?fit=1200%2C879&ssl=1"
+                alt="Italian Cuisine" uk-cover>
+            </li>
+            <li>
+              <img
+                src="https://media3.s-nbcnews.com/j/newscms/2019_39/3027176/190926-chicken-tikka-masala-se-405p_663a402a82bc1464dfc1838472644431.fit-760w.jpg"
+                alt="Indian Cuisine" uk-cover>
+            </li>
+            <li>
+              <img
+                src="https://www.dartagnan.com/dw/image/v2/AALC_PRD/on/demandware.static/-/Sites-dartagnan-Library/default/dwe91ee894/images/content/sweet-and-sticky-baby-back-ribs-recipe.jpg?strip=false"
+                alt="BBQ Cuisine" uk-cover>
+            </li>
+            <li>
+              <img
+                src="https://www.whiskaffair.com/wp-content/uploads/2020/07/Hibachi-Chicken-3.jpg"
+                alt="Japanese Cuisine" uk-cover>
+            </li>
+            <li>
+              <img
+                src="https://dimospizza.com/content/uploads/TLK_1941.JPG"
+                alt="Pizza Cu" uk-cover>
+            </li>
+
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+            uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+            uk-slideshow-item="next"></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
   <div class="footer">
-    <p><a href="" uk-icon="heart"></a></p>
+    <p><a href="" uk-icon="smiley"></a></p>
   </div>
 
   <script src="script.js"></script>
