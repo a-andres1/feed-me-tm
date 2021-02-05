@@ -35,3 +35,24 @@ body {
     padding: 12px;
     color: black;
 }
+
+#gallery {
+    text-align: center;
+}
+/* .requirements {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2px;
+  padding: 10px;
+}
+
+.images {
+    width: 160px;
+    height: 140px;
+} */
+
+/* img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/09/spaghetti-meatballs.jpg?fit=1200%2C879&ssl=1" alt="Italian Cuisine" class="images">
+        <img src="https://www.thecookierookie.com/wp-content/uploads/2018/12/crock-pot-ribs-recipe-slow-cooker-bbq-ribs-3-of-7.jpg" alt="BBQ" class="images">
+        <img src="https://media3.s-nbcnews.com/j/newscms/2019_39/3027176/190926-chicken-tikka-masala-se-405p_663a402a82bc1464dfc1838472644431.fit-760w.jpg" alt="Indian Cuisine" class="images">
+        <img src="https://thumbs.dreamstime.com/b/japanese-hibachi-lunch-made-fried-rice-shrimp-steak-vegetables-close-up-table-vertical-top-view-plate-172491252.jpg" alt="Japanese Cuisine" class="images">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhugPRw08Hpk9yt_fA5fg0PIQ-OLybjsOwA&usqp=CAU" alt="Pizza" class="images"> */
