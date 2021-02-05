@@ -7,40 +7,58 @@ $(document).ready(function () {
     $("#indian").prop("checked", localStorage.getItem("indian") == "true");
     $("#japanese").prop("checked", localStorage.getItem("japanese") == "true");
     $('input[id="italian"]').prop("checked", localStorage.getItem("italian") == "true");
+    $('input[id="pizza"]').prop("checked", localStorage.getItem("pizza") == "true");
+    $('input[id="bbq"]').prop("checked", localStorage.getItem("bbq") == "true");
 
     // Function to get latitude and longitude
     $("#loc-btn").click(function () {
         console.log("Hello")
+        $("#location").empty();
         // setting variables to get values from the user input
         var locationOne = $("#firstLocation").val().trim();
         var locationTwo = $("#secondLocation").val().trim();
-        
+
         console.log(locationOne);
         console.log(locationTwo);
         // if statements in case people don't enter addresses correctly
-        if (locationTwo === "") {
-            locationTwo = locationOne
-        }
-        if (locationOne === ""){
-            locationOne = locationTwo
-        }
-        if (locationOne === "", locationTwo === ""){
+        if (locationOne === "" && locationTwo === "") {
             var text = $("<p>").text("Please enter an address")
             $("#location").append(text);
+            
+        }
+       else if (locationOne === "") {
+            locationOne = locationTwo
+            getTudes(locationOne, locationTwo);
+        }
+       else if (locationTwo === "") {
+        locationTwo = locationOne
+        getTudes(locationOne, locationTwo);
+            
+        }
+        else {
+            getTudes(locationOne, locationTwo);
+
         }
         console.log(locationTwo)
 
         localStorage.setItem("locationOne", locationOne);
         localStorage.setItem("locationTwo", locationTwo);
-        
+
         var isIndianChecked = $("#indian").is(":checked");
         var isJapaneseChecked = $("#japanese").is(":checked");
         var isItalianChecked = $("#italian").is(":checked");
+        var isPizzaChecked = $("#pizza").is(":checked");
+        var isBbqChecked = $("#bbq").is(":checked");
         localStorage.setItem("indian", isIndianChecked);
         localStorage.setItem("japanese", isJapaneseChecked);
         localStorage.setItem("italian", isItalianChecked);
+        localStorage.setItem("pizza", isPizzaChecked);
+        localStorage.setItem("bbq", isBbqChecked);
 
-        // ajax call for the first location
+
+    });
+
+    function getTudes(locationOne, locationTwo) {   // ajax call for the first location
         var requestOne = $.ajax({
             url: "https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=" + locationOne,
             method: "GET",
@@ -86,15 +104,22 @@ $(document).ready(function () {
 
                 cuisines.push($("#italian").attr("data-cuisine-id"));
             }
+            if ($('input[id="pizza"]').is(':checked')) {
 
+                cuisines.push($("#italian").attr("data-cuisine-id"));
+            }
+            if ($('input[id="bbq"]').is(':checked')) {
+
+                cuisines.push($("#bbq").attr("data-cuisine-id"));
+            }
             console.log(cuisines);
 
             // passing the parameters to the function for the zomato api call
             // $("#finalLatLng").html("Final latitude is " + finalLat + " and Longitute is " + finalLng);
             getResturant(finalLat, finalLng, cuisines);
         });
+    }
 
-    });
 
 
     // function to run the zomato api call
