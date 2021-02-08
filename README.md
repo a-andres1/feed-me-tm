@@ -54,6 +54,8 @@ ___
 
 [Deployed Site](https://a-andres1.github.io/feed-me-tm/)
 
+[Slides](https://docs.google.com/presentation/d/1eC-D2LYv2jsg0UJe6f-p9dOKmAAneyXrS7-lZxDDYIo/edit?usp=sharing)
+
 
 ## Screenshot
 ![feed-me-site](./Assets/feed-me.png)
