@@ -28,6 +28,14 @@ For our group Tyler worked on the frontend and Deepali and Alyssa worked on the 
 
 -[Zomato API](https://www.zomato.com/atlanta0)
 
+-jQuery
+
+-Javascript
+
+-css
+
+-HTML 5
+
 ### Challenges
 One major challenged we faced was how to find a distance between two addresses that we could use for our zomato api call. At first we were thinking there might be a way to calculate the distance between the addresses, but that didn't work for a number of reason. First, how would we find a third address between the two points. Second, what kind of complicated math would we need to do. 
 
@@ -60,6 +68,9 @@ ___
 ## Screenshot
 ![feed-me-site](./Assets/feed-me.png)
 
+### Our site in action
+![feed-me-gif](./Assets/feed-me.gif)
+
 
 
 ___
@@ -75,3 +86,12 @@ ___
 4. Display a map with directions to your location
 5. Display reviews
 6. Display the price range of the restuarant 
+
+
+## Collaborators
+
+-[Alyssa Andres](https://github.com/a-andres1)
+
+-[Deepali Garg](https://github.com/Deepali-Gtech)
+
+-[Tyler Gilbert](https://github.com/Tylergilbert913)
