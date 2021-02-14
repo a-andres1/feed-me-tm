@@ -69,7 +69,7 @@ ___
 ![feed-me-site](./Assets/feed-me.png)
 
 ### Our site in action
-![feed-me-gif](./Assets/feed-me.gif)
+![feed-me-gif](./Assets/Feed-me.gif)
 
 
 
